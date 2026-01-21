@@ -1,6 +1,6 @@
 import './App.css';
-import MovieCarrusel from './components/carrusel/Carrusel.jsx';
 import movies from './assets/films.json';
+import MovieCarrusel from './components/carrusel/carrusel';
 
 function App() {
   return (

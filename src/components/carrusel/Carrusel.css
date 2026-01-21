@@ -1,0 +1,80 @@
+.carousel-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2%;
+    padding: 1em 0;
+}
+
+.carousel-card {
+    background-color: #1B2426;
+    border: 2px solid #050809;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px #050809;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    height: 600px;
+}
+
+.carousel-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px #70B5B0;
+}
+
+.carousel-card h2 {
+    color: #FDEE00;
+    margin: 0 0 0.5em 0;
+}
+
+.carousel-card p {
+    color: #FFFFFF;
+    margin: 0.2em 0;
+}
+
+.carousel-card img.movie-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 0.5em;
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: space-between;
+    margin: 1em 0;
+}
+
+.carousel-btn {
+    background-color: #FDEE00;
+    color: #000000;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.carousel-btn:hover {
+    background-color: #8B1A1A;
+    color: #FFFFFF;
+}
+
+@media (max-width: 1000px) {
+    .carousel-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4%;
+    }
+}
+
+@media (max-width: 700px) {
+    .carousel-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .carousel-card {
+        height: auto;
+    }
+}
