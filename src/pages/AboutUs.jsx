@@ -1,35 +1,34 @@
-
+import '../style/AboutUs.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './LegalPages.css';
 
 function AboutUs() {
     return (
         <div className="pageContainer legalPage">
             <div className="legalHeader">
                 <h1>Sobre Nosotros</h1>
-                <p className="lastUpdate">Conoce el equipo detrás de Escena del Crimen</p>
+                <p className="lastUpdate">Tu plataforma de streaming de crimen, misterio y suspenso</p>
             </div>
 
             <section className="legalSection aboutIntro">
                 <h2>Nuestra Misión</h2>
                 <p className="highlight">
-                    En Escena del Crimen nos dedicamos a explorar, documentar y analizar casos criminales reales
-                    con el más alto nivel de rigor periodístico y respeto por las víctimas y sus familias.
+                    En Escena del Crimen ofrecemos una experiencia de streaming inmersiva al estilo Netflix,
+                    especializada en películas, series y documentales de crimen real, misterio, thriller
+                    y suspenso.
                 </p>
             </section>
 
             <section className="legalSection">
                 <h2>Quiénes Somos</h2>
                 <p>
-                    Somos un equipo multidisciplinario de periodistas de investigación, criminólogos, expertos
-                    forenses y creadores de contenido apasionados por desentrañar los misterios más complejos
-                    del crimen real.
+                    Somos un equipo de desarrolladores, curadores de contenido y amantes del cine y las
+                    series de crimen, dedicados a crear un videoclub digital moderno y fácil de usar.
                 </p>
                 <p>
-                    Fundada en 2024, Escena del Crimen nació de la necesidad de crear un espacio donde el true
-                    crime se aborde con profesionalismo, ética y responsabilidad, alejándonos del sensacionalismo
-                    y centrándonos en el análisis objetivo y educativo.
+                    Fundada en 2026, Escena del Crimen nace como una alternativa temática a las grandes
+                    plataformas de streaming, enfocándose exclusivamente en historias intensas,
+                    investigaciones reales y ficción criminal de alta calidad.
                 </p>
             </section>
 
@@ -37,20 +36,20 @@ function AboutUs() {
                 <h2>Nuestros Valores</h2>
                 <div className="valuesGrid">
                     <div className="valueCard">
-                        <h3>🔍 Rigor Investigativo</h3>
-                        <p>Verificamos cada dato y consultamos fuentes oficiales y expertos en cada caso.</p>
+                        <h3>🎬 Calidad</h3>
+                        <p>Seleccionamos contenido premium con altos estándares narrativos y visuales.</p>
                     </div>
                     <div className="valueCard">
-                        <h3>❤️ Respeto</h3>
-                        <p>Tratamos cada caso con la dignidad que merecen las víctimas y sus familias.</p>
+                        <h3>🧠 Curaduría</h3>
+                        <p>Organizamos el catálogo por géneros y recomendaciones personalizadas.</p>
                     </div>
                     <div className="valueCard">
-                        <h3>📚 Educación</h3>
-                        <p>Buscamos educar sobre criminología, justicia y el sistema legal.</p>
+                        <h3>🚀 Innovación</h3>
+                        <p>Mejoramos constantemente la experiencia del usuario y la plataforma.</p>
                     </div>
                     <div className="valueCard">
-                        <h3>⚖️ Objetividad</h3>
-                        <p>Presentamos los hechos sin prejuicios ni sensacionalismo.</p>
+                        <h3>🔐 Seguridad</h3>
+                        <p>Protegemos la información y privacidad de nuestros usuarios.</p>
                     </div>
                 </div>
             </section>
@@ -59,28 +58,28 @@ function AboutUs() {
                 <h2>Nuestro Equipo</h2>
                 <div className="teamGrid">
                     <div className="teamMember">
-                        <div className="memberInitial">MC</div>
-                        <h3>María Castro</h3>
-                        <p className="role">Directora Editorial</p>
-                        <p>Periodista de investigación con 15 años de experiencia en casos criminales.</p>
+                        <div className="memberInitial">AC</div>
+                        <h3>Ana Cruz</h3>
+                        <p className="role">CEO & Fundadora</p>
+                        <p>Apasionada por el cine criminal y la tecnología.</p>
                     </div>
                     <div className="teamMember">
-                        <div className="memberInitial">JR</div>
-                        <h3>Javier Ruiz</h3>
-                        <p className="role">Criminólogo Jefe</p>
-                        <p>Doctor en Criminología especializado en perfilación criminal.</p>
+                        <div className="memberInitial">RM</div>
+                        <h3>Raúl Martínez</h3>
+                        <p className="role">CTO</p>
+                        <p>Arquitecto de software y desarrollador full stack.</p>
                     </div>
                     <div className="teamMember">
-                        <div className="memberInitial">LG</div>
-                        <h3>Laura Gómez</h3>
-                        <p className="role">Experta Forense</p>
-                        <p>Consultora forense con experiencia en análisis de evidencias.</p>
+                        <div className="memberInitial">LP</div>
+                        <h3>Lucía Pérez</h3>
+                        <p className="role">Curadora de Contenido</p>
+                        <p>Especialista en cine, series y documentales de crimen.</p>
                     </div>
                     <div className="teamMember">
-                        <div className="memberInitial">DS</div>
-                        <h3>David Sánchez</h3>
-                        <p className="role">Productor de Contenido</p>
-                        <p>Especialista en narrativa documental y true crime.</p>
+                        <div className="memberInitial">JG</div>
+                        <h3>Jorge Gómez</h3>
+                        <p className="role">UX/UI Designer</p>
+                        <p>Diseñador de experiencias digitales intuitivas.</p>
                     </div>
                 </div>
             </section>
@@ -88,35 +87,34 @@ function AboutUs() {
             <section className="legalSection">
                 <h2>Qué Hacemos</h2>
                 <ul>
-                    <li><strong>Investigación de casos:</strong> Analizamos en profundidad casos criminales históricos y actuales</li>
-                    <li><strong>Contenido educativo:</strong> Creamos material sobre criminología, psicología forense y justicia</li>
-                    <li><strong>Documentales y podcasts:</strong> Producimos contenido multimedia de alta calidad</li>
-                    <li><strong>Comunidad:</strong> Fomentamos el debate respetuoso y educado sobre casos reales</li>
-                    <li><strong>Colaboraciones:</strong> Trabajamos con expertos, autoridades y organizaciones de víctimas</li>
+                    <li><strong>Streaming:</strong> Ofrecemos un catálogo exclusivo de crimen y suspenso</li>
+                    <li><strong>Recomendaciones:</strong> Sugerimos contenido según tus gustos</li>
+                    <li><strong>Listas personalizadas:</strong> Guarda tus favoritos y sigue viendo</li>
+                    <li><strong>Perfiles:</strong> Crea perfiles para distintos usuarios</li>
+                    <li><strong>Actualizaciones:</strong> Agregamos nuevo contenido cada semana</li>
                 </ul>
             </section>
 
             <section className="legalSection">
-                <h2>Nuestro Compromiso Ético</h2>
+                <h2>Nuestro Compromiso</h2>
                 <p>
-                    Nos comprometemos a tratar cada caso con sensibilidad y respeto. Trabajamos en estrecha
-                    colaboración con familias de víctimas cuando es posible, y siempre priorizamos la dignidad
-                    de las personas afectadas sobre el entretenimiento.
+                    Nos comprometemos a ofrecer una plataforma estable, segura y con contenido de alta
+                    calidad para todos los amantes del crimen y el suspenso.
                 </p>
                 <p>
-                    Creemos firmemente en la importancia de la justicia y en dar voz a quienes ya no pueden hablar.
-                    Nuestro trabajo busca honrar su memoria y contribuir a que casos sin resolver encuentren respuestas.
+                    Trabajamos para que cada sesión en Escena del Crimen sea tan adictiva y fluida como
+                    en cualquier gran plataforma de streaming.
                 </p>
             </section>
 
             <section className="legalSection contactSection">
                 <h2>Contacta con Nosotros</h2>
-                <p>¿Tienes información sobre un caso? ¿Quieres colaborar con nosotros? ¿Tienes sugerencias?</p>
+                <p>¿Tienes sugerencias de contenido? ¿Problemas técnicos? ¿Quieres colaborar?</p>
                 <ul>
-                    <li>📧 Email: contacto@escenadelcrimen.com</li>
-                    <li>📱 Teléfono: +34 900 123 456</li>
-                    <li>📍 Dirección: Calle Ejemplo, 123, 46001 Valencia, España</li>
-                    <li>💬 Redes Sociales: Encuéntranos en Facebook, Instagram y TikTok</li>
+                    <li>📧 Email: soporte@escenadelcrimen.com</li>
+                    <li>📱 Teléfono: +34 900 555 777</li>
+                    <li>📍 Dirección: Calle Streaming, 404, Madrid, España</li>
+                    <li>💬 Redes Sociales: Facebook, Instagram y TikTok</li>
                 </ul>
             </section>
 

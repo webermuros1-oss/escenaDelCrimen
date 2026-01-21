@@ -1,4 +1,4 @@
-// App.jsx - Archivo principal con rutas configuradas
+// App.jsx
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Footer from './components/footer/Footer.jsx';
@@ -7,22 +7,21 @@ import TerminosUso from './pages/TerminosUso.jsx';
 import SobreNosotros from './pages/AboutUs.jsx';
 import Home from './pages/Home.jsx';
 
+// Importar estilos globales y de layout
+import './style/global.css';
+import './style/layout.css';
+
 function App() {
   return (
     <div className="siteWrapper">
       <main className="mainContent">
         <Routes>
-          {/* Ruta principal */}
           <Route path="/" element={<Home />} />
-          
-          {/* Rutas de páginas legales */}
           <Route path="/avisos-legales" element={<AvisosLegales />} />
           <Route path="/terminos-uso" element={<TerminosUso />} />
           <Route path="/sobre-nosotros" element={<SobreNosotros />} />
         </Routes>
       </main>
-      
-      {/* El footer aparece en todas las páginas */}
       <Footer />
     </div>
   );

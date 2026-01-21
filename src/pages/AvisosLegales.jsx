@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './LegalPages.css';
+import '../style/AvisosLegales.css';
 
 function AvisosLegales() {
     return (
@@ -29,21 +28,18 @@ function AvisosLegales() {
             <section className="legalSection">
                 <h2>2. Objeto</h2>
                 <p>
-                    El presente aviso legal regula el uso y utilización del sitio web www.escenadelcrimen.com,
-                    del que es titular Escena del Crimen S.L. La navegación por el sitio web atribuye la condición
-                    de usuario del mismo e implica la aceptación plena y sin reservas de todas y cada una de las
-                    disposiciones incluidas en este Aviso Legal.
+
+                    El presente aviso legal regula el uso y utilización del sitio web y la aplicación
+                    Escena del Crimen, plataforma de streaming especializada en contenido de crimen
+                    y suspenso
                 </p>
             </section>
 
             <section className="legalSection">
                 <h2>3. Propiedad Intelectual e Industrial</h2>
                 <p>
-                    Todos los contenidos del sitio web, incluyendo pero no limitándose a textos, fotografías,
-                    gráficos, imágenes, iconos, tecnología, software, links y demás contenidos audiovisuales o
-                    sonoros, así como su diseño gráfico y códigos fuente, son propiedad intelectual de Escena del
-                    Crimen S.L., sin que puedan entenderse cedidos al usuario ninguno de los derechos de explotación
-                    reconocidos por la normativa vigente en materia de propiedad intelectual.
+                    Todos los contenidos del sitio web, incluyendo películas, series, trailers,
+    imágenes, logos y software, son propiedad de Escena del Crimen Streaming S.L.
                 </p>
             </section>
 

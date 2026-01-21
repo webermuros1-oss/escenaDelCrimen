@@ -1,3 +1,5 @@
+/* AboutUs.css - Estilos para la página Sobre Nosotros */
+
 .aboutIntro {
   text-align: center;
 }
@@ -22,11 +24,17 @@
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(0, 229, 255, 0.15);
 }
-
+.valueCard p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: left;
+}
 .valueCard h3 {
   color: #6C8A8E;
   margin-bottom: 10px;
   font-size: 1.2rem;
+  ;
 }
 
 .teamGrid {
@@ -81,4 +89,12 @@
   padding: 30px;
   border-radius: 10px;
   border-left: 4px solid #00e5ff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .valuesGrid,
+  .teamGrid {
+    grid-template-columns: 1fr;
+  }
 }

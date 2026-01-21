@@ -1,7 +1,7 @@
-// TerminosUso.jsx
+import '../style/TerminosUso.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './LegalPages.css';
+
 
 function TerminosUso() {
     return (
@@ -24,15 +24,15 @@ function TerminosUso() {
             <section className="legalSection">
                 <h2>2. Uso del Contenido</h2>
                 <p>
-                    El contenido proporcionado en Escena del Crimen es únicamente para fines informativos y
-                    educativos. No debe considerarse como asesoramiento legal, médico o profesional de ningún tipo.
+                    El contenido proporcionado en Escena del Crimen es únicamente para uso personal
+                    y no comercial. Está prohibida la descarga, redistribución o grabación del contenido.
                 </p>
                 <p><strong>Restricciones de uso:</strong></p>
                 <ul>
-                    <li>No copiar, modificar o distribuir el contenido sin autorización previa</li>
-                    <li>No utilizar el contenido con fines comerciales sin permiso explícito</li>
-                    <li>No realizar ingeniería inversa de ninguna parte del sitio web</li>
-                    <li>No intentar acceder a áreas restringidas del sitio</li>
+                    <li>No compartir tu cuenta con terceros fuera de tu hogar</li>
+                    <li>No descargar ni redistribuir contenido</li>
+                    <li>No usar el servicio con fines comerciales</li>
+                    <li>No manipular el reproductor de video</li>
                 </ul>
             </section>
 
@@ -53,12 +53,11 @@ function TerminosUso() {
             <section className="legalSection">
                 <h2>4. Contenido Sensible</h2>
                 <p>
-                    Nuestro sitio contiene información sobre crímenes reales que puede incluir descripciones
-                    de violencia, muerte y otros temas sensibles. Al usar este sitio, usted reconoce y acepta
-                    que puede estar expuesto a dicho contenido.
+                    Nuestro catálogo incluye películas y series con violencia, crimen y
+    temáticas para adultos.
                 </p>
                 <p className="warning">
-                    ⚠️ Se recomienda discreción del usuario. El contenido no es apropiado para menores de 18 años.
+                    ⚠️ Contenido recomendado para mayores de 16 años.
                 </p>
             </section>
 

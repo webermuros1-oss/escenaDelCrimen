@@ -1,6 +1,6 @@
-import React from 'react';
-import './LegalPages.css';
 
+import '../style/Home.css';
+import React from 'react';
 
 
 function Home() {
