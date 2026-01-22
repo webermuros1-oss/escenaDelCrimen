@@ -10,6 +10,14 @@
   justify-content: center;
 }
 
+.loading, .error {
+  color: #00e5ff;
+  text-align: center;
+  padding: 50px;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
 .featuredMovie {
   max-width: 900px;
   width: 100%;
@@ -72,11 +80,38 @@
   font-weight: bold;
 }
 
+.movieMeta {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.movieMeta span {
+  background: rgba(0, 229, 255, 0.1);
+  color: #00e5ff;
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  border: 1px solid rgba(0, 229, 255, 0.3);
+}
+
 .movieDescription {
   color: #b0b0b0;
   line-height: 1.6;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   font-size: 1rem;
+}
+
+.castList {
+  color: #b0b0b0;
+  font-size: 0.9rem;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+.castList strong {
+  color: #00e5ff;
 }
 
 .watchButton {
@@ -119,6 +154,10 @@
   .movieInfo h2 {
     font-size: 2rem;
   }
+
+  .movieMeta {
+    gap: 10px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -132,5 +171,10 @@
 
   .movieDescription {
     font-size: 0.9rem;
+  }
+
+  .movieMeta span {
+    font-size: 0.75rem;
+    padding: 5px 10px;
   }
 }
