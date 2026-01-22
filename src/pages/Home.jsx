@@ -5,7 +5,7 @@ import React from 'react';
 
 function Home() {
   return (
-    <div className="pageContainer">
+    <div className="pageHome">
       <h1>Bienvenido a Escena del Crimen</h1>
       <p>Tu plataforma de contenido de crímenes reales y misterios sin resolver.</p>
       <div className="homeCards">
