@@ -83,7 +83,7 @@ function Home() {
       {/* Sección del carrusel */}
       {allMovies.length > 0 && (
         <div className="carouselSection">
-          <h2 className="carouselTitle">Explora Más Películas</h2>
+          <h2 className="carouselTitle">Disfrúta más Películas</h2>
           <Carrusel movies={allMovies} />
         </div>
       )}
