@@ -117,7 +117,19 @@ function Home() {
                   {featuredMovie.main_cast.join(", ")}
                 </div>
               )}
-              <button className="watchButton" >Ver</button>
+
+              <button
+                className="watchButton"
+                onClick={() => {
+                  if (featuredMovie.url) {
+                    window.open(featuredMovie.url, "_blank", "noopener,noreferrer");
+                  } else {
+                    alert("Tráiler no disponible");
+                  }
+                }}
+              >
+                Ver Tráiler
+              </button>
             </div>
           </div>
         </div>
