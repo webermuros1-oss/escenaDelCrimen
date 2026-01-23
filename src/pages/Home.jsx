@@ -117,7 +117,7 @@ function Home() {
                   {featuredMovie.main_cast.join(", ")}
                 </div>
               )}
-              <button className="watchButton">Ver Ahora</button>
+              <button className="watchButton" >Ver</button>
             </div>
           </div>
         </div>
