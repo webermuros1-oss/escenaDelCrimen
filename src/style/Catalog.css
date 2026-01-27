@@ -1,0 +1,101 @@
+.catalogo-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 2.5rem;
+    color: #8B1A1A;
+}
+
+.catalogo-selector {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.catalogo-selector select {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #132D30;
+    cursor: pointer;
+    color:#8B1A1A;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.catalogo-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    padding: 0 2.5rem 3rem;
+}
+
+@media (min-width: 768px) {
+    .catalogo-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.8rem; /* Reducido para juntar las cards */
+        justify-items: center; /* Centra las cards en su celda */
+    }
+}
+
+.catalogo-card {
+    width: 50%;
+    max-width: 280px; /* Añadido para controlar el tamaño máximo */
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 1rem;
+    background-color: #132D30;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.catalogo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+}
+
+.catalogo-img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.catalogo-title-film {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 0.75rem;
+}
+
+.catalogo-meta {
+    font-size: 0.9rem;
+    color: #70B5B0;
+    margin-top: 0.25rem;
+}
+
+.catalogo-desc {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    color: whitesmoke;
+    line-height: 1.4;
+}
+
+.catalogo-score {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    font-weight: bold;
+    color: #f59e0b;
+}
+
+.catalogo-link {
+    display: inline-block;
+    margin-top: 0.6rem;
+    font-size: 0.9rem;
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.catalogo-link:hover {
+    text-decoration: underline;
+}
