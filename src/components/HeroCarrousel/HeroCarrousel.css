@@ -1,6 +1,7 @@
 .heroCarousel {
     position: relative;
     width: 100%;
+    max-width: 100vw;
     height: 100vh;
     overflow: hidden;
 }
@@ -11,12 +12,14 @@
     inset: 0;
     z-index: 1;
     pointer-events: none;
+    overflow: hidden;
 }
 
 .heroVideoElement {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    max-width: 100vw;
 }
 
 /* OVERLAY */
@@ -86,16 +89,16 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 6px; /* ⬅️ Un poco más alta para facilitar el clic */
+    max-width: 100vw;
+    height: 6px;
     background: rgba(255, 255, 255, 0.25);
     z-index: 4;
-    cursor: pointer; /* ⬅️ Cursor pointer para indicar que es clickeable */
+    cursor: pointer;
     transition: height 0.2s ease;
 }
 
-/* ✅ Efecto hover en la barra */
 .heroProgressBar:hover {
-    height: 8px; /* ⬅️ Se hace más grande al pasar el mouse */
+    height: 8px;
 }
 
 .heroProgressFill {
@@ -103,7 +106,7 @@
     background: #8B1A1A;
     width: 0%;
     transition: width 0.1s linear;
-    pointer-events: none; /* ⬅️ Los clics pasan a través del fill */
+    pointer-events: none;
 }
 
 /* CONTENIDO */
@@ -111,6 +114,7 @@
     position: relative;
     z-index: 3;
     height: 100%;
+    max-width: 100vw;
 }
 
 /* FLECHAS */
@@ -141,4 +145,43 @@
 
 .heroArrowRight {
     right: 20px;
+}
+
+/* ===== RESPONSIVE MÓVIL ===== */
+@media (max-width: 768px) {
+    .heroCarousel {
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+    }
+
+    .heroSoundButton,
+    .heroPlayButton {
+        bottom: 15px;
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .heroSoundButton {
+        right: 15px;
+    }
+
+    .heroPlayButton {
+        right: 60px;
+    }
+
+    .heroArrow {
+        width: 45px;
+        height: 45px;
+        font-size: 2rem;
+    }
+
+    .heroArrowLeft {
+        left: 10px;
+    }
+
+    .heroArrowRight {
+        right: 10px;
+    }
 }
