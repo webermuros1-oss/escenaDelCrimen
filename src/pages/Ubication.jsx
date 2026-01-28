@@ -1,8 +1,12 @@
-function Ubication(){
-    return(
-        <div class="ubication">
-            <h1>Ubicación</h1>
-            <iframe src="https://maps.app.goo.gl/vcCdCixhqtuFLa6H8"></iframe>
-        </div>
-    )
+import Ubication from "../components/Ubication/ubication.jsx";
+
+function Ubicacion() {
+  return (
+    <div className="ubicacion">
+      <h1>Nuestra ubicación:</h1>
+      <Ubication />
+    </div>
+  );
 }
+
+export default Ubicacion;
