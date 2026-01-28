@@ -34,9 +34,9 @@ const Catalogo = () => {
                     </select>
                 </div>
 
-                <ul className="catalogGrid">
+                <div className="catalogGrid">
                     {films.map(film => (
-                        <li key={film.rank} className="catalogCard">
+                        <div key={film.rank} className="catalogCard">
                             <img
                                 src={`/${film.img}`}
                                 alt={film.title}
@@ -71,9 +71,9 @@ const Catalogo = () => {
                             >
                                 Ver tráiler ▶
                             </a>
-                        </li>
+                        </div>
                     ))}
-                </ul>
+                </div>
             </div>
         </div>
     );
