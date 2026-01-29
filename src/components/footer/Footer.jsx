@@ -1,4 +1,3 @@
-// Footer.jsx - Versión minimalista compacta
 import './Footer.css';
 import facebookLogo from '../../images/logos/facebookLogo.png';
 import instagramIcon from '../../images/logos/instagramIcon.png';
@@ -23,6 +22,8 @@ function Footer() {
             <Link to="/avisos-legales">Avisos Legales</Link>
             <Link to="/terminos-uso">Términos de uso</Link>
             <Link to="/sobre-nosotros">Sobre nosotros</Link>
+            {/* ✅ CORREGIDA LA RUTA */}
+            <Link to="/politicas-de-privacidad">Política de Privacidad</Link>
           </div>
 
           <div className="socialList">
@@ -43,7 +44,7 @@ function Footer() {
           </div>
         </div>
 
-        {/* ⬅️ VERSION MÓVIL (Compacta en una línea) */}
+        {/* ⬅️ VERSION MÓVIL (CORREGIDA COMPLETA) */}
         <div className="footerMobile">
           {/* Redes sociales SOLO ICONOS */}
           <div className="footerMobileSocial">
@@ -58,13 +59,15 @@ function Footer() {
             </a>
           </div>
 
-          {/* Links legales compactos */}
+          {/* ✅ LINKS LEGALES MÓVIL CON PRIVACIDAD */}
           <div className="footerMobileLinks">
             <Link to="/avisos-legales" title="Avisos Legales">AvisosLegales</Link>
             <span className="separator">•</span>
-            <Link to="/terminos-uso" title="Términos de Uso">Terminos Uso</Link>
+            <Link to="/terminos-uso" title="Términos de Uso">TerminosUso</Link>
             <span className="separator">•</span>
             <Link to="/sobre-nosotros" title="Sobre Nosotros">Nosotros</Link>
+            <span className="separator">•</span>
+            <Link to="/politicas-de-privacidad" title="Política de Privacidad">Privacidad</Link>
           </div>
 
           {/* Copyright minimalista */}

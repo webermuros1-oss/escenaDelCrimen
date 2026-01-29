@@ -9,6 +9,7 @@ function AboutUs() {
     }, []);
 
     return (
+        
         <div className="tittleAboutUs">
             <div className="legalNotice">
                 <h1>Sobre Nosotros</h1>

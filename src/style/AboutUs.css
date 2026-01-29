@@ -13,14 +13,15 @@ body {
   line-height: 1.6;
 }
 
+
 /* Contenedor principal */
 .tittleAboutUs {
   max-width: 1200px;
   margin: 0 auto;
   padding: 60px 40px;
   min-height: 100vh;
+background:url(../images/background/fondoHome1.png) ;
 }
-
 /* ========== HEADER ========== */
 
 .legalNotice {

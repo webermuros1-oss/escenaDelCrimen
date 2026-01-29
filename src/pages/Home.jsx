@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Carrusel from "../components/carrusel/Carrusel.jsx";
 import HeroCarousel from "../components/HeroCarrousel/HeroCarrousel.jsx";
+import FeaturedMovie from "../components/FeaturedMovie/FeaturedMovie.jsx"
 
 function Home() {
   const [featuredMovie, setFeaturedMovie] = useState(null);
@@ -104,6 +105,12 @@ function Home() {
           <HeroCarousel featuredMovies={featuredMovies} />
         )}
       </div>
+      <div className="featuredMovie">
+      {featuredMovie && (
+      <FeaturedMovie movie={featuredMovie} />
+    )}
+</div>
+
 
       <div className="content-sections">
         {mafiasYGangsters.length > 0 && (

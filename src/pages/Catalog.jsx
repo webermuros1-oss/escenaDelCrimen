@@ -12,6 +12,19 @@ const Catalogo = () => {
             .catch(err => console.error("Error cargando catálogo:", err));
     }, [category]);
 
+    // ✅ FUNCIÓN para reservar película
+    const handleReservar = (film) => {
+        // Por ahora solo muestra alerta, después puedes conectar con backend
+        alert(`🎬 ¡RESERVADA! "${film.title}" para tu videoclub\n\nDirector: ${film.director}\nAño: ${film.year}\n\n✅ Te contactaremos para coordinar la entrega`);
+        
+        // Opcional: aquí puedes hacer POST a tu API de reservas
+        fetch('http://localhost:3000/reservas', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(film)
+        });
+    };
+
     return (
         <div className="pageCatalog">
             <div className="catalogContainer">
@@ -24,7 +37,7 @@ const Catalogo = () => {
                         value={category}
                         onChange={e => setCategory(e.target.value)}
                     >
-                        <option value="mafiasYGangsters">Mafias y Gángsters</option>
+                        <option value="mafiasYGangsters">Mafias y Gánsters</option>
                         <option value="cineNegroClasico">Cine Negro Clásico</option>
                         <option value="thrillerPolicial">Thriller Policial</option>
                         <option value="thrillerPsicologico">Thriller Psicológico</option>
@@ -63,14 +76,24 @@ const Catalogo = () => {
                                 ⭐ {film.filmaffinity_score}
                             </p>
 
-                            <a
-                                href={film.url}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="catalogLink"
-                            >
-                                Ver tráiler ▶
-                            </a>
+                            <div className="catalogActions">
+                                <a
+                                    href={film.url}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="catalogLink"
+                                >
+                                    Ver tráiler ▶
+                                </a>
+
+                                {/* ✅ BOTÓN RESERVAR NUEVO */}
+                                <button
+                                    className="catalogReservarBtn"
+                                    onClick={() => handleReservar(film)}
+                                >
+                                    Reservar
+                                </button>
+                            </div>
                         </div>
                     ))}
                 </div>
