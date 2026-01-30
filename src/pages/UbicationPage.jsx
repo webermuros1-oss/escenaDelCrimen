@@ -1,6 +1,7 @@
 import Ubication from "../components/Ubication/ubication.jsx";
+import "../style/UbicationPage.css";
 
-function Ubicacion() {
+function UbicationPage() {
   return (
     <div className="ubicacion">
       <h1>Nuestra ubicación:</h1>
@@ -9,4 +10,4 @@ function Ubicacion() {
   );
 }
 
-export default Ubicacion;
+export default UbicationPage;
