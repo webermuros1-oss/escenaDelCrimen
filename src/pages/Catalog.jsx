@@ -29,7 +29,7 @@ const Catalogo = () => {
         <div className="pageCatalog">
             <div className="catalogContainer">
                 <h1 className="catalogTitle">
-                    Toda nuestra Filmografía
+                    Nuestro Catálogo
                 </h1>
 
                 <div className="catalogSelector">
