@@ -4,7 +4,7 @@
 Este proyecto es una aplicación web interactiva que permite visualizar un catálogo de más de 100 películas del género "Mafias y Gangsters". Incluye un carrusel dinámico y una sección para añadir nuevas películas.
 
 ## 📸 Vista Previa
-[alt text](<src/images/films/README (2).jpeg>)
+![alt text](<src/images/films/README (2).jpeg>)
 
 ## 🛠️ Tecnologías Utilizadas
 * **React**: Biblioteca principal para la interfaz de usuario.
