@@ -6,11 +6,10 @@ import TerminosUso from './pages/TerminosUso.jsx';
 import SobreNosotros from './pages/AboutUs.jsx';
 import Home from './pages/Home.jsx';
 import Catalog from "./pages/Catalog";
-import AdminPanel from "./pages/AdminPanel.jsx";
-import PoliticasPrivacidad from './pages/PoliticasDePrivacidad.jsx'; // ✅ AÑADIDO
+import Formulario from "./pages/Formulario.jsx";        // ✅ NUEVO: Reemplaza AdminPanel
+import PoliticasPrivacidad from './pages/PoliticasDePrivacidad.jsx';
 import UbicationPage from './pages/UbicationPage.jsx';
 import AddFilmPage from "./pages/AddFilmPage.jsx";
-
 
 import './style/global.css';
 import './style/layout.css';
@@ -31,7 +30,7 @@ function App() {
           <Route path="/catalog" element={<Catalog />} />
           <Route path="/addMoviesPage" element={<AddFilmPage />} />
           <Route path="/ubicacion" element={<UbicationPage />} />
-          
+          <Route path="/admin" element={<Formulario />} />     {/* ✅ CAMBIADO: AdminPanel → Formulario */}
         </Routes>
       </main>
       <Footer />

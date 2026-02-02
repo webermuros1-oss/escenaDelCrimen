@@ -127,17 +127,6 @@
       "img": "src/images/films/enemigoPublico.jpg",
       "url": "https://www.youtube.com/watch?v=S0y_oB6HovE",
       "id": "49c5"
-    },
-    {
-      "id": "c17d",
-      "title": "el padrino ",
-      "year": 1972,
-      "director": "Francis Ford Coppola",
-      "filmaffinity_score": 9,
-      "description": "peliculon",
-      "img": "src/images/films/elPadrino.jpg",
-      "url": "https://www.youtube.com/watch?v=gCVj1LeYnsc",
-      "category": "mafiasYGangsters"
     }
   ],
   "cineNegroClasico": [
