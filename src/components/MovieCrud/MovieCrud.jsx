@@ -1,3 +1,4 @@
+import { getAllMovies, createMovie } from "../../services/MovieServes";
 import React, { useState, useEffect } from 'react';
 import './MovieCRUD.css';
 
@@ -25,15 +26,13 @@ const MovieCRUD = ({ category = 'misPeliculas' }) => {
 
   const fetchMovies = async () => {
     try {
-      const response = await fetch(`http://localhost:3001/${category}`);
-      const data = await response.json();
+      const data = await getAllMovies(); 
       setMoviesList(data);
     } catch (error) {
       console.error("Error al cargar películas:", error);
       alert("❌ No se pudieron cargar las películas");
     }
   };
-
   const handleChange = (e) => {
     setMovie({ ...movie, [e.target.name]: e.target.value });
   };
@@ -42,11 +41,7 @@ const MovieCRUD = ({ category = 'misPeliculas' }) => {
   const handleCreate = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`http://localhost:3001/${category}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(movie)
-      });
+      await createMovie(movie);
 
       if (response.ok) {
         alert("✅ ¡Película guardada con éxito!");
