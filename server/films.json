@@ -14,7 +14,7 @@
       "description": "La historia de la familia mafiosa Corleone y la transformación de Michael Corleone de hijo obediente a líder implacable en el mundo criminal.",
       "img": "src/images/films/elPadrino.jpg",
       "url": "https://www.youtube.com/watch?v=gCVj1LeYnsc",
-      "id": "f57f"
+      "id": "4ffc"
     },
     {
       "rank": 2,
@@ -30,7 +30,7 @@
       "description": "Secuela y precuela que alterna la consolidación de Michael Corleone con los orígenes de Vito Corleone.",
       "img": "src/images/films/elPadrino2.jpg",
       "url": "https://www.youtube.com/watch?v=9O1Iy9od7-A",
-      "id": "bc7f"
+      "id": "0f00"
     },
     {
       "rank": 7,
@@ -46,7 +46,7 @@
       "description": "Retrato crudo de la vida en una favela de Río de Janeiro y el ascenso del narcotráfico.",
       "img": "src/images/films/ciudadDeDios.jpg",
       "url": "https://www.youtube.com/watch?v=6mI8m2GAm4Q",
-      "id": "bbcd"
+      "id": "0311"
     },
     {
       "rank": 8,
@@ -62,7 +62,7 @@
       "description": "Historia real de Henry Hill y su implicación en la mafia italoamericana.",
       "img": "src/images/films/unoDeLosNuestros.jpg",
       "url": "https://www.youtube.com/watch?v=Xh0mP89Cms0",
-      "id": "be3c"
+      "id": "dcd2"
     },
     {
       "rank": 10,
@@ -78,7 +78,7 @@
       "description": "Épica de gánsteres judíos en Nueva York.",
       "img": "src/images/films/eraseUnaVezEnAmerica.jpg",
       "url": "https://www.youtube.com/watch?v=mzhQp0fK_B4",
-      "id": "07b4"
+      "id": "5e4e"
     },
     {
       "rank": 22,
@@ -94,7 +94,7 @@
       "description": "Un gánster intenta dejar la vida criminal.",
       "img": "src/images/films/alRojoVivo.jpg",
       "url": "https://www.youtube.com/watch?v=A20T0_E6KqA",
-      "id": "dc8d"
+      "id": "81fa"
     },
     {
       "rank": 28,
@@ -110,7 +110,7 @@
       "description": "Control mafioso de los casinos de Las Vegas.",
       "img": "src/images/films/casino.jpg",
       "url": "https://www.youtube.com/watch?v=db68m_eX38s",
-      "id": "ca1a"
+      "id": "1a94"
     },
     {
       "rank": 44,
@@ -126,17 +126,17 @@
       "description": "Ascenso y caída de un gángster.",
       "img": "src/images/films/enemigoPublico.jpg",
       "url": "https://www.youtube.com/watch?v=S0y_oB6HovE",
-      "id": "fd2a"
+      "id": "49c5"
     },
     {
-      "id": "41e6",
-      "title": "la cosa",
-      "year": 2000,
-      "director": "yo",
-      "filmaffinity_score": 10,
-      "description": "",
-      "img": "",
-      "url": "",
+      "id": "c17d",
+      "title": "el padrino ",
+      "year": 1972,
+      "director": "Francis Ford Coppola",
+      "filmaffinity_score": 9,
+      "description": "peliculon",
+      "img": "src/images/films/elPadrino.jpg",
+      "url": "https://www.youtube.com/watch?v=gCVj1LeYnsc",
       "category": "mafiasYGangsters"
     }
   ],
@@ -155,7 +155,7 @@
       "description": "Asesinato por dinero del seguro.",
       "img": "src/images/films/pactoDeSangre.jpg",
       "url": "https://www.youtube.com/watch?v=S3jIs0h7d_I",
-      "id": "05c6"
+      "id": "3e59"
     },
     {
       "rank": 14,
@@ -171,7 +171,7 @@
       "description": "Thriller noir clásico.",
       "img": "src/images/films/perversidad.jpg",
       "url": "https://www.youtube.com/watch?v=33m_Y_u2yL4",
-      "id": "73fc"
+      "id": "f5d1"
     },
     {
       "rank": 20,
@@ -187,7 +187,7 @@
       "description": "Policía honesto vs corrupción.",
       "img": "src/images/films/losSobornados.jpg",
       "url": "https://www.youtube.com/watch?v=680D9N6_398",
-      "id": "ce86"
+      "id": "9e5b"
     },
     {
       "rank": 23,
@@ -203,7 +203,7 @@
       "description": "Red de chantaje y crimen.",
       "img": "src/images/films/laMujerDelCuadro.jpg",
       "url": "https://www.youtube.com/watch?v=f7GOnU2W63k",
-      "id": "16b0"
+      "id": "1441"
     },
     {
       "rank": 25,
@@ -225,7 +225,7 @@
       "description": "Atraco a joyería.",
       "img": "src/images/films/mientrasLaCiudadDuerme.jpg",
       "url": "https://www.youtube.com/watch?v=Kz98B60_8_g",
-      "id": "b5da"
+      "id": "a5ff"
     },
     {
       "rank": 26,
@@ -242,7 +242,7 @@
       "description": "Detective atrapado en su pasado.",
       "img": "src/images/films/retornoAlPasado.jpg",
       "url": "https://www.youtube.com/watch?v=pY-6X8vH98g",
-      "id": "507b"
+      "id": "f929"
     }
   ],
   "thrillerPolicial": [
@@ -261,7 +261,7 @@
       "trailer": "public/media/trailers/Seven.mp4",
       "img": "src/images/films/seven.jpg",
       "url": "https://www.youtube.com/watch?v=znmZoV7MBps",
-      "id": "d454"
+      "id": "8b6c"
     },
     {
       "rank": 17,
@@ -277,7 +277,7 @@
       "description": "Corrupción fronteriza.",
       "img": "src/images/films/sedDeMal.jpg",
       "url": "https://www.youtube.com/watch?v=V9koT9_NisY",
-      "id": "8ad0"
+      "id": "b4c0"
     },
     {
       "rank": 19,
@@ -293,7 +293,7 @@
       "description": "Batman vs Joker.",
       "img": "src/images/films/elCaballeroDeLaNoche.jpg",
       "url": "https://www.youtube.com/watch?v=LDG9bisJEaI",
-      "id": "757a"
+      "id": "5685"
     },
     {
       "rank": 41,
@@ -309,7 +309,7 @@
       "description": "Corrupción en LA.",
       "img": "src/images/films/chinatown.jpg",
       "url": "https://www.youtube.com/watch?v=T_SAn7G_u7Q",
-      "id": "b13c"
+      "id": "2bb2"
     },
     {
       "rank": 43,
@@ -326,7 +326,7 @@
       "trailer": "",
       "img": "src/images/films/noEsPais.jpg",
       "url": "https://www.youtube.com/watch?v=L2G574Y_4pI",
-      "id": "6cc9"
+      "id": "b8f0"
     },
     {
       "rank": 53,
@@ -343,7 +343,7 @@
       "description": "Desaparición sospechosa.",
       "img": "src/images/films/perdida.jpg",
       "url": "https://www.youtube.com/watch?v=Q9m8XInC6vM",
-      "id": "3569"
+      "id": "ea03"
     },
     {
       "rank": 54,
@@ -360,7 +360,7 @@
       "description": "Padre busca justicia.",
       "img": "src/images/films/prisioneros.jpg",
       "url": "https://www.youtube.com/watch?v=N_8fK-F3320",
-      "id": "f3c4"
+      "id": "5225"
     }
   ],
   "thrillerPsicologico": [
@@ -378,7 +378,7 @@
       "description": "Asesino serial.",
       "img": "src/images/films/elVampiroDeDusseldorf.jpg",
       "url": "https://www.youtube.com/watch?v=8p_h29A0mE0",
-      "id": "aa71"
+      "id": "dbab"
     },
     {
       "rank": 12,
@@ -395,7 +395,7 @@
       "trailer": "public/media/trailers/ElSilencioDeLosCorderos.mp4",
       "img": "src/images/films/elSilencioDeLosCorderos.jpg",
       "url": "https://www.youtube.com/watch?v=GAnO0O4eR1Y",
-      "id": "dcde"
+      "id": "a17d"
     },
     {
       "rank": 15,
@@ -412,7 +412,7 @@
       "trailer": "public/media/trailers/naranjaMecanica.mp4",
       "img": "src/images/films/naranjaMecanica.jpg",
       "url": "https://www.youtube.com/watch?v=T54uZPI4Z8A",
-      "id": "8e5b"
+      "id": "0077"
     },
     {
       "rank": 24,
@@ -428,7 +428,7 @@
       "description": "Vigilante urbano.",
       "img": "src/images/films/taxiDriver.jpg",
       "url": "https://www.youtube.com/watch?v=c_S6H9M89M4",
-      "id": "baac"
+      "id": "69be"
     },
     {
       "rank": 31,
@@ -445,7 +445,7 @@
       "trailer": "",
       "img": "src/images/films/psicosis.jpg",
       "url": "https://www.youtube.com/watch?v=vV_XpYvYp8E",
-      "id": "e121"
+      "id": "9986"
     },
     {
       "rank": 49,
@@ -462,7 +462,7 @@
       "trailer": "public/media/trailers/elResplandor.mp4",
       "img": "src/images/films/elResplandor.jpg",
       "url": "https://www.youtube.com/watch?v=S014oGZiL2I",
-      "id": "3a14"
+      "id": "3738"
     },
     {
       "rank": 60,
@@ -478,7 +478,7 @@
       "description": "Venganza brutal.",
       "img": "src/images/films/oldBoy.jpg",
       "url": "https://www.youtube.com/watch?v=2HkjwJqmkNg",
-      "id": "da1b"
+      "id": "f40b"
     },
     {
       "rank": 63,
@@ -494,7 +494,7 @@
       "description": "Hospital psiquiátrico.",
       "img": "src/images/films/shutterIsland.jpg",
       "url": "https://www.youtube.com/watch?v=CRdakyXEZos",
-      "id": "a219"
+      "id": "302e"
     }
   ],
   "misterioDetectives": [
@@ -512,7 +512,7 @@
       "description": "Caso reabierto.",
       "img": "src/images/films/elSecretoDeSusOjos.jpg",
       "url": "https://www.youtube.com/watch?v=GqK2L_rI0R0",
-      "id": "5d86"
+      "id": "e307"
     },
     {
       "rank": 32,
@@ -528,7 +528,7 @@
       "description": "Juicio con giro.",
       "img": "src/images/films/testigoDeCargo.jpg",
       "url": "https://www.youtube.com/watch?v=68T0uU6w4Kk",
-      "id": "3f88"
+      "id": "39e2"
     },
     {
       "rank": 33,
@@ -544,7 +544,7 @@
       "description": "Poirot en el tren.",
       "img": "src/images/films/OrienteExpress1974.jpg",
       "url": "https://www.youtube.com/watch?v=z6Hh4S7_76Y",
-      "id": "3552"
+      "id": "d08b"
     },
     {
       "rank": 34,
@@ -560,7 +560,7 @@
       "description": "Crucero mortal.",
       "img": "src/images/films/muerteEnElNilo.jpg",
       "url": "https://www.youtube.com/watch?v=rX_Yn3U8fB0",
-      "id": "28d2"
+      "id": "d00e"
     },
     {
       "rank": 35,
@@ -577,7 +577,7 @@
       "description": "Asesinatos en isla.",
       "img": "src/images/films/diezNegritos1945.jpg",
       "url": "https://www.youtube.com/watch?v=pAnI5_t25pI",
-      "id": "f49c"
+      "id": "910a"
     },
     {
       "rank": 45,
@@ -593,7 +593,7 @@
       "description": "Remake Poirot.",
       "img": "src/images/films/OrienteExpress2017.jpg",
       "url": "https://www.youtube.com/watch?v=7uV_VmqXGTo",
-      "id": "317e"
+      "id": "8ef9"
     },
     {
       "rank": 46,
@@ -609,7 +609,7 @@
       "description": "Remake Nilo.",
       "img": "src/images/films/muerteEnElNilo2022.jpg",
       "url": "https://www.youtube.com/watch?v=l_989Kst4k4",
-      "id": "f361"
+      "id": "b923"
     },
     {
       "rank": 51,
@@ -626,7 +626,7 @@
       "description": "Misterio moderno.",
       "img": "src/images/films/knivesOut.jpg",
       "url": "https://www.youtube.com/watch?v=H7S3E-Wb2nU",
-      "id": "75ac"
+      "id": "a35b"
     },
     {
       "rank": 52,
@@ -643,7 +643,7 @@
       "description": "Isla griega.",
       "img": "src/images/films/glassOnion.jpg",
       "url": "https://www.youtube.com/watch?v=u6CAnG8uSjA",
-      "id": "ebb5"
+      "id": "985d"
     }
   ],
   "terrorCriminal": [
@@ -661,7 +661,7 @@
       "description": "Atraco fallido.",
       "img": "src/images/films/perrosDeLaCalle.jpg",
       "url": "https://www.youtube.com/watch?v=vV_XpYvYp8E",
-      "id": "af51"
+      "id": "03c6"
     },
     {
       "rank": 29,
@@ -677,7 +677,7 @@
       "description": "Asesino por aromas.",
       "img": "src/images/films/elPerfume.jpg",
       "url": "https://www.youtube.com/watch?v=3m_K9r52y4M",
-      "id": "5acd"
+      "id": "e94e"
     },
     {
       "rank": 38,
@@ -693,7 +693,7 @@
       "description": "Estrangulador.",
       "img": "src/images/films/frenzy.jpg",
       "url": "https://www.youtube.com/watch?v=YyWvKz5Wn_0",
-      "id": "e95f"
+      "id": "a8ef"
     },
     {
       "rank": 57,
@@ -709,7 +709,7 @@
       "description": "Morgue mortal.",
       "img": "src/images/films/cadaverAnnaFritz.jpg",
       "url": "https://www.youtube.com/watch?v=0eI3G1m-R_c",
-      "id": "05e5"
+      "id": "c147"
     },
     {
       "rank": 62,
@@ -726,7 +726,7 @@
       "description": "Jigsaw.",
       "img": "src/images/films/saw.jpg",
       "url": "https://www.youtube.com/watch?v=S-1QgOMQ-ls",
-      "id": "b5f7"
+      "id": "28ec"
     },
     {
       "rank": 64,
@@ -743,7 +743,7 @@
       "description": "Supervivencia.",
       "img": "src/images/films/geraldsGame.jpg",
       "url": "https://www.youtube.com/watch?v=twbGU2CqqQU",
-      "id": "eaa0"
+      "id": "c978"
     }
   ],
   "thrillerModerno": [
@@ -762,7 +762,7 @@
       "description": "Familia rica.",
       "img": "src/images/films/crookedHouse.jpg",
       "url": "https://www.youtube.com/watch?v=OunN9vI-B0k",
-      "id": "11e7"
+      "id": "e8b9"
     },
     {
       "rank": 55,
@@ -779,7 +779,7 @@
       "description": "Trauma infantil.",
       "img": "src/images/films/mysticRiver.jpg",
       "url": "https://www.youtube.com/watch?v=t_6_G9X5_Fw",
-      "id": "cebc"
+      "id": "5001"
     },
     {
       "rank": 56,
@@ -796,7 +796,7 @@
       "description": "Testigo accidental.",
       "img": "src/images/films/chicaDelTren.jpg",
       "url": "https://www.youtube.com/watch?v=y5y7S8S6Z54",
-      "id": "0110"
+      "id": "2ed5"
     },
     {
       "rank": 58,
@@ -812,7 +812,7 @@
       "description": "Pasado oscuro.",
       "img": "src/images/films/incendies.jpg",
       "url": "https://www.youtube.com/watch?v=0nyqxBC64Sg",
-      "id": "4e6d"
+      "id": "360f"
     },
     {
       "rank": 59,
@@ -829,7 +829,7 @@
       "description": "Corea rural.",
       "img": "src/images/films/memoriesMurder.jpg",
       "url": "https://www.youtube.com/watch?v=dT7vMrM-2Ok",
-      "id": "bf36"
+      "id": "2410"
     },
     {
       "rank": 61,
@@ -846,7 +846,7 @@
       "description": "Madre justiciera.",
       "img": "src/images/films/mother.jpg",
       "url": "https://www.youtube.com/watch?v=8V-9S_Yp390",
-      "id": "82a7"
+      "id": "fca2"
     },
     {
       "rank": 65,
@@ -863,7 +863,7 @@
       "description": "Llamada de emergencia.",
       "img": "src/images/films/skyldige.jpg",
       "url": "https://www.youtube.com/watch?v=pAnI5_t25pI",
-      "id": "855f"
+      "id": "597f"
     },
     {
       "rank": 66,
@@ -879,7 +879,7 @@
       "description": "Encerrados.",
       "img": "src/images/films/elBar.jpg",
       "url": "https://www.youtube.com/watch?v=Kz6EOf6j6E0",
-      "id": "54a8"
+      "id": "6f3e"
     },
     {
       "rank": 67,
@@ -896,7 +896,7 @@
       "description": "Mentiras.",
       "img": "src/images/films/contratiempo.jpg",
       "url": "https://www.youtube.com/watch?v=epCg2RbyF-0",
-      "id": "c961"
+      "id": "3aea"
     },
     {
       "rank": 68,
@@ -912,7 +912,7 @@
       "description": "Saltos temporales.",
       "img": "src/images/films/duranteTormenta.jpg",
       "url": "https://www.youtube.com/watch?v=eK2-4S4vF-8",
-      "id": "90ba"
+      "id": "3d65"
     },
     {
       "rank": 69,
@@ -928,7 +928,7 @@
       "description": "Ceguera.",
       "img": "src/images/films/losOjosJulia.jpg",
       "url": "https://www.youtube.com/watch?v=9_fJz2v6QYo",
-      "id": "115b"
+      "id": "e329"
     },
     {
       "rank": 70,
@@ -944,7 +944,7 @@
       "description": "Orfanato.",
       "img": "src/images/films/elOrfanato.jpg",
       "url": "https://www.youtube.com/watch?v=8V-9S_Yp390",
-      "id": "1eae"
+      "id": "c46c"
     },
     {
       "rank": 71,
@@ -960,7 +960,7 @@
       "description": "Piel sintética.",
       "img": "src/images/films/pielHabito.jpg",
       "url": "https://www.youtube.com/watch?v=n5hD-3Gv1S4",
-      "id": "5779"
+      "id": "0526"
     }
   ]
 }
