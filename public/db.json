@@ -12,7 +12,7 @@
             ],
             "filmaffinity_score": 9,
             "description": "La historia de la familia mafiosa Corleone y la transformación de Michael Corleone de hijo obediente a líder implacable en el mundo criminal.",
-            "img": "src/images/films/elPadrino.jpg",
+            "img": "public/images/films/elPadrino.jpg",
             "url": "https://www.youtube.com/watch?v=gCVj1LeYnsc",
             "id": "4ffc"
         },
@@ -212,7 +212,7 @@
             ],
             "filmaffinity_score": 8.1,
             "description": "Atraco a joyería.",
-            "img": "src/images/films/mientrasLaCiudadDuerme.jpg",
+            "img": "public/images/films/mientrasLaCiudadDuerme.jpg",
             "url": "https://www.youtube.com/watch?v=Kz98B60_8_g",
             "id": "a5ff"
         },
@@ -229,7 +229,7 @@
             ],
             "filmaffinity_score": 8.1,
             "description": "Detective atrapado en su pasado.",
-            "img": "src/images/films/retornoAlPasado.jpg",
+            "img": "public/images/films/retornoAlPasado.jpg",
             "url": "https://www.youtube.com/watch?v=pY-6X8vH98g",
             "id": "f929"
         }
@@ -248,7 +248,7 @@
             "filmaffinity_score": 8.3,
             "description": "Asesino de los pecados capitales.",
             "trailer": "public/media/trailers/Seven.mp4",
-            "img": "src/images/films/seven.jpg",
+            "img": "public/images/films/seven.jpg",
             "url": "https://www.youtube.com/watch?v=znmZoV7MBps",
             "id": "8b6c"
         },
@@ -264,7 +264,7 @@
             ],
             "filmaffinity_score": 8.1,
             "description": "Corrupción fronteriza.",
-            "img": "src/images/films/sedDeMal.jpg",
+            "img": "public/images/films/sedDeMal.jpg",
             "url": "https://www.youtube.com/watch?v=V9koT9_NisY",
             "id": "b4c0"
         },
