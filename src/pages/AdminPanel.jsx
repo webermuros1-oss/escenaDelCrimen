@@ -1,7 +1,9 @@
+// AdminPanel.jsx - CAMBIOS MÍNIMOS para Vercel
 import { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import "../style/adminPanel.css";
 import FilmsCards from "../components/FilmsCards/FilmsCards";
+import API_URL from '../config/api'; // ✅ NUEVO
 
 const categories = [
     { id: "mafiasYGangsters", label: "Mafias y Gángsters" },
@@ -25,11 +27,12 @@ const AdminPanel = () => {
 
     const loadAllMovies = useCallback(async () => {
         try {
-            const requests = categories.map(cat => 
-                axios.get(`http://localhost:3000/${cat.id}`).catch(() => ({ data: [] }))
-            );
-            const responses = await Promise.all(requests);
-            const allMoviesData = responses.flatMap(r => r.data || []);
+            // ✅ CAMBIO: Cargar desde db.json en lugar de endpoints separados
+            const response = await axios.get(`${API_URL}/db.json`);
+            const data = response.data;
+            
+            // ✅ Combinar todas las categorías en un array
+            const allMoviesData = Object.values(data).flat();
             setAllMovies(allMoviesData);
         } catch (err) {
             console.error("Error cargando películas:", err);
@@ -46,6 +49,13 @@ const AdminPanel = () => {
 
     const handleCreate = async (e) => {
         e.preventDefault();
+        
+        // ⚠️ En Vercel (producción) esto no funcionará
+        if (import.meta.env.PROD) {
+            alert("⚠️ Esta función solo está disponible en desarrollo local.\n\nPara agregar películas en producción, edita public/db.json localmente y haz deploy.");
+            return;
+        }
+
         try {
             const newMovie = {
                 ...formData,
@@ -56,7 +66,7 @@ const AdminPanel = () => {
                 main_cast: formData.main_cast ? formData.main_cast.split(",").map(s => s.trim()) : []
             };
 
-            await axios.post(`http://localhost:3000/${formData.category}`, newMovie);
+            await axios.post(`${API_URL}/${formData.category}`, newMovie);
             await loadAllMovies(); 
             alert("✅ ¡Película CREADA!");
             resetForm();
@@ -67,6 +77,13 @@ const AdminPanel = () => {
 
     const handleUpdate = async (e) => {
         e.preventDefault();
+        
+        // ⚠️ En Vercel (producción) esto no funcionará
+        if (import.meta.env.PROD) {
+            alert("⚠️ Esta función solo está disponible en desarrollo local.\n\nPara editar películas en producción, edita public/db.json localmente y haz deploy.");
+            return;
+        }
+
         try {
             const updatedMovie = {
                 ...formData,
@@ -76,7 +93,7 @@ const AdminPanel = () => {
                 main_cast: formData.main_cast ? formData.main_cast.split(",").map(s => s.trim()) : []
             };
 
-            await axios.put(`http://localhost:3000/${editingMovie.category}/${editingMovie.id}`, updatedMovie);
+            await axios.put(`${API_URL}/${editingMovie.category}/${editingMovie.id}`, updatedMovie);
             await loadAllMovies();
             alert("✅ ¡Película EDITADA!");
             resetForm();
@@ -86,9 +103,15 @@ const AdminPanel = () => {
     };
 
     const handleDelete = async (id, title) => {
+        // ⚠️ En Vercel (producción) esto no funcionará
+        if (import.meta.env.PROD) {
+            alert("⚠️ Esta función solo está disponible en desarrollo local.\n\nPara eliminar películas en producción, edita public/db.json localmente y haz deploy.");
+            return;
+        }
+
         if (confirm(`¿BORRAR "${title}"?`)) {
             try {
-                await axios.delete(`http://localhost:3000/${selectedCategory}/${id}`);
+                await axios.delete(`${API_URL}/${selectedCategory}/${id}`);
                 await loadAllMovies();
                 alert("✅ ¡Película BORRADA!");
             } catch (err) {
@@ -119,7 +142,19 @@ const AdminPanel = () => {
         <div className="admin-panel" style={{maxWidth: '1400px', margin: '0 auto', padding: '2rem'}}>
             <div style={{marginBottom: '2rem', padding: '1rem', background: '#333', color: 'white', borderRadius: '8px'}}>
                 <h1>🎬 Admin - {categories.find(c => c.id === selectedCategory)?.label}</h1>
-                <div style={{display: 'flex', gap: '0.5rem', flexWrap: 'wrap'}}>
+                
+                {/* ⚠️ Mostrar aviso solo en producción */}
+                {import.meta.env.PROD && (
+                    <div style={{background: '#ff6b6b', padding: '1rem', borderRadius: '8px', marginTop: '1rem'}}>
+                        <strong>⚠️ MODO SOLO LECTURA (Producción)</strong>
+                        <p style={{margin: '0.5rem 0 0 0'}}>
+                            Las funciones de crear/editar/eliminar solo funcionan en desarrollo local.
+                            Para modificar el catálogo, edita <code>public/db.json</code> y haz deploy.
+                        </p>
+                    </div>
+                )}
+
+                <div style={{display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginTop: '1rem'}}>
                     {categories.map(cat => (
                         <button key={cat.id} onClick={() => setSelectedCategory(cat.id)}
                             style={{ padding: '0.8rem', background: selectedCategory === cat.id ? '#007bff' : '#eee', borderRadius: '25px', cursor: 'pointer' }}>

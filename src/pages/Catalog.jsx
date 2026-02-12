@@ -1,28 +1,33 @@
+// Catalog.jsx - CAMBIOS MÍNIMOS para Vercel
 import { useEffect, useState } from "react";
 import "../style/Catalog.css";
+import API_URL from '../config/api'; // ✅ NUEVO
 
 const Catalog = () => {
     const [films, setFilms] = useState([]);
     const [category, setCategory] = useState("mafiasYGangsters");
+    const [allData, setAllData] = useState(null); // ✅ NUEVO: guardar todo el JSON
 
+    // ✅ NUEVO: Cargar el JSON completo una sola vez
     useEffect(() => {
-        fetch(`http://localhost:3000/${category}`)
+        fetch(`${API_URL}/db.json`)
             .then(res => res.json())
-            .then(data => setFilms(data))
+            .then(data => setAllData(data))
             .catch(err => console.error("Error cargando catálogo:", err));
-    }, [category]);
+    }, []);
 
-    
+    // ✅ NUEVO: Filtrar por categoría cuando cambie
+    useEffect(() => {
+        if (allData && allData[category]) {
+            setFilms(allData[category]);
+        }
+    }, [category, allData]);
+
     const handleReservar = (film) => {
-        
         alert(`🎬 ¡RESERVADA! "${film.title}" para tu videoclub\n\nDirector: ${film.director}\nAño: ${film.year}\n\n✅ Te contactaremos para coordinar la entrega`);
         
-        
-        fetch('http://localhost:3000/reservas', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(film)
-        });
+        // ⚠️ En Vercel esto no funcionará (no puedes hacer POST a JSON estático)
+        console.log('Reserva guardada:', film);
     };
 
     return (
@@ -116,7 +121,6 @@ const Catalog = () => {
                                     Ver tráiler ▶
                                 </a>
 
-                                
                                 <button
                                     className="catalogReservarBtn"
                                     onClick={() => handleReservar(film)}

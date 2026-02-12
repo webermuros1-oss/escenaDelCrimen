@@ -1,14 +1,16 @@
-// Home.jsx
+// Home.jsx - CAMBIOS MÍNIMOS para Vercel
 import "../style/Home.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Carrusel from "../components/carrusel/Carrusel.jsx";
 import HeroCarousel from "../components/HeroCarrousel/HeroCarrousel.jsx";
-import FeaturedMovie from "../components/FeaturedMovie/FeaturedMovie.jsx"
+import FeaturedMovie from "../components/FeaturedMovie/FeaturedMovie.jsx";
 import AppPromo from "../components/AppPromo/AppPromo.jsx";
+import API_URL from '../config/api'; // ✅ NUEVO
+
 function Home() {
   const [featuredMovie, setFeaturedMovie] = useState(null);
-  const [featuredMovies, setFeaturedMovies] = useState([]); 
+  const [featuredMovies, setFeaturedMovies] = useState([]);
   const [mafiasYGangsters, setMafiasYGangsters] = useState([]);
   const [cineNegroClasico, setCineNegroClasico] = useState([]);
   const [thrillerPolicial, setThrillerPolicial] = useState([]);
@@ -18,7 +20,6 @@ function Home() {
   const [thrillerModerno, setThrillerModerno] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  
   const processMovieImages = (movies) => {
     return movies.map(movie => ({
       ...movie,
@@ -30,43 +31,27 @@ function Home() {
   useEffect(() => {
     const fetchAllData = async () => {
       try {
-        const baseUrl = "http://localhost:3000";
+        // ✅ CAMBIO: Cargar desde db.json en lugar de endpoints separados
+        const response = await axios.get(`${API_URL}/db.json`);
+        const data = response.data;
 
-        const [
-          resMafias,
-          resCine,
-          resPolicial,
-          resPsico,
-          resMisterio,
-          resTerror,
-          resModerno,
-        ] = await Promise.all([
-          axios.get(`${baseUrl}/mafiasYGangsters`),
-          axios.get(`${baseUrl}/cineNegroClasico`),
-          axios.get(`${baseUrl}/thrillerPolicial`),
-          axios.get(`${baseUrl}/thrillerPsicologico`),
-          axios.get(`${baseUrl}/misterioDetectives`),
-          axios.get(`${baseUrl}/terrorCriminal`),
-          axios.get(`${baseUrl}/thrillerModerno`),
-        ]);
-
-        
-        setMafiasYGangsters(processMovieImages(resMafias.data));
-        setCineNegroClasico(processMovieImages(resCine.data));
-        setThrillerPolicial(processMovieImages(resPolicial.data));
-        setThrillerPsicologico(processMovieImages(resPsico.data));
-        setMisterioDetectives(processMovieImages(resMisterio.data));
-        setTerrorCriminal(processMovieImages(resTerror.data));
-        setThrillerModerno(processMovieImages(resModerno.data));
+        // ✅ Ahora accedes directamente a las propiedades del objeto
+        setMafiasYGangsters(processMovieImages(data.mafiasYGangsters || []));
+        setCineNegroClasico(processMovieImages(data.cineNegroClasico || []));
+        setThrillerPolicial(processMovieImages(data.thrillerPolicial || []));
+        setThrillerPsicologico(processMovieImages(data.thrillerPsicologico || []));
+        setMisterioDetectives(processMovieImages(data.misterioDetectives || []));
+        setTerrorCriminal(processMovieImages(data.terrorCriminal || []));
+        setThrillerModerno(processMovieImages(data.thrillerModerno || []));
 
         const allMovies = [
-          ...resMafias.data,
-          ...resCine.data,
-          ...resPolicial.data,
-          ...resPsico.data,
-          ...resMisterio.data,
-          ...resTerror.data,
-          ...resModerno.data,
+          ...(data.mafiasYGangsters || []),
+          ...(data.cineNegroClasico || []),
+          ...(data.thrillerPolicial || []),
+          ...(data.thrillerPsicologico || []),
+          ...(data.misterioDetectives || []),
+          ...(data.terrorCriminal || []),
+          ...(data.thrillerModerno || [])
         ];
 
         const allMoviesProcessed = processMovieImages(allMovies);
@@ -89,8 +74,6 @@ function Home() {
         );
         
         const peliculasConVideo = [...peliculasPrioritarias, ...otrasPeliculas];
-
-        console.log("Películas en orden:", peliculasConVideo.map(m => m.title));
 
         setFeaturedMovies(peliculasConVideo);
 
@@ -120,17 +103,17 @@ function Home() {
         )}
       </div>
 
-<AppPromo 
-          title="Descarga Nuestra App"
-          subtitle="La escena del crimen en tu bolsillo"
-          features={[
-            "📱 Acceso desde cualquier dispositivo",
-            "🎬 Catálogo completo actualizado",
-            "⭐ Reserva tus películas favoritas"
-          ]}
-          appStoreUrl="#"
-          playStoreUrl="#"
-        />
+      <AppPromo 
+        title="Descarga Nuestra App"
+        subtitle="La escena del crimen en tu bolsillo"
+        features={[
+          "📱 Acceso desde cualquier dispositivo",
+          "🎬 Catálogo completo actualizado",
+          "⭐ Reserva tus películas favoritas"
+        ]}
+        appStoreUrl="#"
+        playStoreUrl="#"
+      />
 
       <div className="content-sections">
         {mafiasYGangsters.length > 0 && (
