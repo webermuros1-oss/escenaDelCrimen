@@ -22,15 +22,11 @@ export default function AddFilmPage() {
 
         try {
             await axios.post(
-                `http://localhost:3000/${film.category}`,
+                'http://localhost:8080/movies',
                 {
                     ...film,
                     year: Number(film.year),
-                    filmaffinity_score: Number(film.filmaffinity_score),
-                    
-                    id: Date.now().toString(),
-                    rank: Math.floor(Date.now() / 1000), 
-                    main_cast: []
+                    filmaffinity_score: Number(film.filmaffinity_score)
                 }
             );
             alert("🎉 Película añadida correctamente");

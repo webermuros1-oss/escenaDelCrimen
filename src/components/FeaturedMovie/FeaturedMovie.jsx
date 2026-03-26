@@ -15,7 +15,7 @@ function FeaturedMovie({ movie }) {
             <div className="movieCard">
                 <div className="moviePoster">
                     <img
-                        src={`/${movie.img}`}
+                        src={movie.img}
                         alt={movie.title}
                         onError={(e) => {
                             e.target.src =
@@ -33,7 +33,7 @@ function FeaturedMovie({ movie }) {
                         <span className="year">📅 {movie.year}</span>
                         <span className="director">🎬 {movie.director}</span>
                         <span className="rating">
-                            ⭐ {movie.filmaffinity_score}
+                            ⭐ {movie.filmAffinity_score}
                         </span>
                     </div>
 

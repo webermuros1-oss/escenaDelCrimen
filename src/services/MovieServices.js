@@ -1,8 +1,7 @@
-// src/services/MovieServices.js
-const API_BASE = 'http://localhost:3001';
+const API_BASE = 'http://localhost:8080/movies';
 
 export const createMovie = async (movieData) => {
-    const response = await fetch(`${API_BASE}/${movieData.category}`, {
+    const response = await fetch(API_BASE, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(movieData)
@@ -11,8 +10,8 @@ export const createMovie = async (movieData) => {
     return response.json();
 };
 
-export const updateMovie = async (id, movieData, category) => {
-    const response = await fetch(`${API_BASE}/${category}/${id}`, {
+export const updateMovie = async (id, movieData) => {
+    const response = await fetch(`${API_BASE}/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(movieData)
@@ -21,28 +20,15 @@ export const updateMovie = async (id, movieData, category) => {
     return response.json();
 };
 
-export const deleteMovie = async (id, category) => {
-    const response = await fetch(`${API_BASE}/${category}/${id}`, {
+export const deleteMovie = async (id) => {
+    const response = await fetch(`${API_BASE}/${id}`, {
         method: 'DELETE'
     });
     if (!response.ok) throw new Error('Error borrando película');
-    return response.json();
 };
 
 export const fetchAllMovies = async () => {
-    const categories = ['mafiasYGangsters', 'cineNegroClasico', 'thrillerPolicial', 'thrillerPsicologico', 'misterioDetectives', 'terrorCriminal', 'thrillerModerno'];
-    const allMovies = [];
-
-    for (const category of categories) {
-        try {
-            const response = await fetch(`${API_BASE}/${category}`);
-            if (response.ok) {
-                const movies = await response.json();
-                movies.forEach(movie => allMovies.push({ ...movie, category }));
-            }
-        } catch (error) {
-            console.warn(`Categoría ${category} no disponible`);
-        }
-    }
-    return allMovies;
+    const response = await fetch(API_BASE);
+    if (!response.ok) throw new Error('Error cargando películas');
+    return response.json();
 };

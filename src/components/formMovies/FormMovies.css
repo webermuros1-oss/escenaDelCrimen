@@ -73,6 +73,13 @@
 }
 
 .form-input,
+.form-textarea,
+.form-input.full-width[name="category"] option {
+    background: #132D30;
+    color: #fff;
+}
+
+.form-input,
 .form-textarea {
     width: 100%;
     padding: 15px 20px;

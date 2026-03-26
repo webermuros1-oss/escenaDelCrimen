@@ -16,5 +16,5 @@ const db = {
     ...films  // Mantiene las categorías separadas
 };
 
-fs.writeFileSync('./server/db.json', JSON.stringify(db, null, 2));
+fs.writeFileSync('./server/movies', JSON.stringify(db, null, 2));
 console.log(`✅ Sincronizados ${allMovies.length} películas en ambos formatos`);

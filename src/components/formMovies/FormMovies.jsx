@@ -3,7 +3,17 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './FormMovies.css';
 
-const BASE_URL = 'http://localhost:3000/mafiasYGangsters';  
+const BASE_URL = '/movies';
+const categories = [
+    { id: 'mafiasYGangsters', label: 'Mafias y Gángsters' },
+    { id: 'cineNegroClasico', label: 'Cine Negro Clásico' },
+    { id: 'thrillerPolicial', label: 'Thriller Policial' },
+    { id: 'thrillerPsicologico', label: 'Thriller Psicológico' },
+    { id: 'misterioDetectives', label: 'Misterio y Detectives' },
+    { id: 'terrorCriminal', label: 'Terror Criminal' },
+    { id: 'thrillerModerno', label: 'Thriller Moderno' },
+];
+
 const initialFormData = {
     titulo: '',
     anio: '',
@@ -11,9 +21,10 @@ const initialFormData = {
     poster: '',
     sinopsis: '',
     director: '',
-    rank: '',
+    ranking: '',
     url: '',
-    main_cast: ''
+    main_cast: '',
+    category: 'mafiasYGangsters',
 };
 
 const FormMovies = () => {
@@ -26,7 +37,7 @@ const FormMovies = () => {
         const fetchPeliculas = async () => {
             try {
                 const respuesta = await axios.get(BASE_URL);
-                const ordenadas = respuesta.data.sort((a, b) => b.rank - a.rank);
+                const ordenadas = respuesta.data.sort((a, b) => b.ranking - a.ranking);
                 setPeliculas(ordenadas);
             } catch (error) {
                 console.error('Error al cargar las películas:', error);
@@ -41,9 +52,7 @@ const FormMovies = () => {
     };
 
     const handleCastChange = (e) => {
-        
-        const cast = e.target.value.split(',').map(item => item.trim());
-        setFormData({ ...formData, main_cast: cast });
+        setFormData({ ...formData, main_cast: e.target.value });
     };
 
     const handleSubmit = async (e) => {
@@ -59,10 +68,11 @@ const FormMovies = () => {
             filmaffinity_score: Number(formData.rating),
             img: formData.poster.trim() || '/images/films/placeholder.jpg',
             description: formData.sinopsis.trim() || 'Sin descripción.',
-            rank: Number(formData.rank) || peliculas.length + 1,
+            ranking: Number(formData.ranking) || peliculas.length + 1,
             director: formData.director.trim() || 'Sin director',
-            main_cast: formData.main_cast ? formData.main_cast.split(',').map(item => item.trim()).filter(Boolean) : [],
-            url: formData.url.trim() || ''
+            main_cast: formData.main_cast.trim(),
+            url: formData.url.trim() || '',
+            category: formData.category,
         };
 
         try {
@@ -88,9 +98,10 @@ const FormMovies = () => {
             poster: pelicula.img ?? '',
             sinopsis: pelicula.description ?? '',
             director: pelicula.director ?? '',
-            rank: pelicula.rank ?? '',
+            ranking: pelicula.ranking ?? '',
             url: pelicula.url ?? '',
-            main_cast: Array.isArray(pelicula.main_cast) ? pelicula.main_cast.join(', ') : ''
+            main_cast: pelicula.main_cast ?? '',
+            category: pelicula.category ?? 'mafiasYGangsters',
         });
         setEditId(pelicula.id);
     };
@@ -170,10 +181,10 @@ const FormMovies = () => {
                                 />
                                 <input
                                     type="number"
-                                    name="rank"
-                                    value={formData.rank}
+                                    name="ranking"
+                                    value={formData.ranking}
                                     onChange={handleChange}
-                                    placeholder="Rank (posición)"
+                                    placeholder="🏆 Ranking (posición)"
                                     min="1"
                                     className="form-input"
                                 />
@@ -209,7 +220,7 @@ const FormMovies = () => {
                                 className="form-input full-width"
                             />
 
-                            
+
                             <input
                                 type="text"
                                 name="main_cast"
@@ -219,7 +230,19 @@ const FormMovies = () => {
                                 className="form-input full-width"
                             />
 
-                            
+
+                            <select
+                                name="category"
+                                value={formData.category}
+                                onChange={handleChange}
+                                className="form-input full-width"
+                            >
+                                {categories.map(cat => (
+                                    <option key={cat.id} value={cat.id}>{cat.label}</option>
+                                ))}
+                            </select>
+
+
                             <textarea
                                 name="sinopsis"
                                 value={formData.sinopsis}
@@ -256,7 +279,7 @@ const FormMovies = () => {
 
                     
                     <section className="movies-grid-section">
-                        <h2> Películas Mafia y Gangsters</h2>
+                        <h2>Todas las Películas</h2>
                         <div className="movies-grid">
                             {peliculas.map((pelicula) => (
                                 <article key={pelicula.id} className="movie-card">
@@ -271,12 +294,12 @@ const FormMovies = () => {
                                         <h3>{pelicula.title}</h3>
                                         <p className="movie-year">📅 {pelicula.year}</p>
                                         <p className="movie-rating">⭐ {pelicula.filmaffinity_score}</p>
-                                        <p className="movie-rank">🏆 #{pelicula.rank}</p>
+                                        <p className="movie-rank">🏆 #{pelicula.ranking}</p>
                                         <p className="movie-director">🎬 {pelicula.director}</p>
                                         {pelicula.main_cast && pelicula.main_cast.length > 0 && (
                                             <p className="movie-cast">
-                                                👥 {pelicula.main_cast.slice(0, 3).join(', ')}
-                                                {pelicula.main_cast.length > 3 && '...' }
+                                                👥 {pelicula.main_cast.split(',').slice(0, 3).join(', ')}
+                                                {pelicula.main_cast.split(',').length > 3 && '...'}
                                             </p>
                                         )}
                                     </div>

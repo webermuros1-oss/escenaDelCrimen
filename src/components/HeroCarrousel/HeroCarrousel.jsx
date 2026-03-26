@@ -101,8 +101,8 @@ const HeroCarousel = ({ featuredMovies }) => {
                     loop
                     muted={isMuted}
                     playsInline
-                    src={`/${currentMovie.trailer}`}
-                    poster={`/${currentMovie.img}`}
+                    src={currentMovie.trailer}
+                    poster={currentMovie.img}
                 />
 
                 <div className="heroOverlay" />

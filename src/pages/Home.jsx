@@ -1,4 +1,3 @@
-// Home.jsx - CAMBIOS MÍNIMOS para Vercel
 import "../style/Home.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
@@ -6,7 +5,7 @@ import Carrusel from "../components/carrusel/Carrusel.jsx";
 import HeroCarousel from "../components/HeroCarrousel/HeroCarrousel.jsx";
 import FeaturedMovie from "../components/FeaturedMovie/FeaturedMovie.jsx";
 import AppPromo from "../components/AppPromo/AppPromo.jsx";
-import API_URL from '../config/api'; // ✅ NUEVO
+import API_URL from '../config/api';
 
 function Home() {
   const [featuredMovie, setFeaturedMovie] = useState(null);
@@ -20,62 +19,24 @@ function Home() {
   const [thrillerModerno, setThrillerModerno] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const processMovieImages = (movies) => {
-    return movies.map(movie => ({
-      ...movie,
-      image: movie.image ? new URL(movie.image, import.meta.url).href : null,
-      poster: movie.poster ? new URL(movie.poster, import.meta.url).href : null,
-    }));
-  };
-
   useEffect(() => {
     const fetchAllData = async () => {
       try {
-        // ✅ CAMBIO: Cargar desde db.json en lugar de endpoints separados
-        const response = await axios.get(`${API_URL}/db.json`);
-        const data = response.data;
+        const response = await axios.get(`${API_URL}/movies`);
+        const all = response.data;
 
-        // ✅ Ahora accedes directamente a las propiedades del objeto
-        setMafiasYGangsters(processMovieImages(data.mafiasYGangsters || []));
-        setCineNegroClasico(processMovieImages(data.cineNegroClasico || []));
-        setThrillerPolicial(processMovieImages(data.thrillerPolicial || []));
-        setThrillerPsicologico(processMovieImages(data.thrillerPsicologico || []));
-        setMisterioDetectives(processMovieImages(data.misterioDetectives || []));
-        setTerrorCriminal(processMovieImages(data.terrorCriminal || []));
-        setThrillerModerno(processMovieImages(data.thrillerModerno || []));
+        const byCategory = (cat) => all.filter(m => m.category === cat);
 
-        const allMovies = [
-          ...(data.mafiasYGangsters || []),
-          ...(data.cineNegroClasico || []),
-          ...(data.thrillerPolicial || []),
-          ...(data.thrillerPsicologico || []),
-          ...(data.misterioDetectives || []),
-          ...(data.terrorCriminal || []),
-          ...(data.thrillerModerno || [])
-        ];
+        setMafiasYGangsters(byCategory('mafiasYGangsters'));
+        setCineNegroClasico(byCategory('cineNegroClasico'));
+        setThrillerPolicial(byCategory('thrillerPolicial'));
+        setThrillerPsicologico(byCategory('thrillerPsicologico'));
+        setMisterioDetectives(byCategory('misterioDetectives'));
+        setTerrorCriminal(byCategory('terrorCriminal'));
+        setThrillerModerno(byCategory('thrillerModerno'));
 
-        const allMoviesProcessed = processMovieImages(allMovies);
-
-        const rankDeseado = 15;
-        const featured =
-          allMoviesProcessed.find((m) => m.rank === rankDeseado) || allMoviesProcessed[0];
-        setFeaturedMovie(featured);
-
-        const ordenPrioritario = ["Seven", "Naranja mecánica"];
-        
-        const peliculasPrioritarias = ordenPrioritario
-          .map(titulo => allMoviesProcessed.find(movie => movie.title === titulo))
-          .filter(movie => movie && movie.trailer && movie.trailer.length > 0);
-        
-        const otrasPeliculas = allMoviesProcessed.filter(movie => 
-          movie.trailer && 
-          movie.trailer.length > 0 && 
-          !ordenPrioritario.includes(movie.title)
-        );
-        
-        const peliculasConVideo = [...peliculasPrioritarias, ...otrasPeliculas];
-
-        setFeaturedMovies(peliculasConVideo);
+        setFeaturedMovie(all[0] || null);
+        setFeaturedMovies(all.filter(m => m.trailer));
 
       } catch (error) {
         console.error("Error cargando las películas:", error);

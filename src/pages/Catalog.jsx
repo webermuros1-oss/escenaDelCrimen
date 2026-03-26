@@ -1,33 +1,25 @@
-// Catalog.jsx - CAMBIOS MÍNIMOS para Vercel
 import { useEffect, useState } from "react";
 import "../style/Catalog.css";
-import API_URL from '../config/api'; // ✅ NUEVO
+import API_URL from '../config/api';
 
 const Catalog = () => {
     const [films, setFilms] = useState([]);
     const [category, setCategory] = useState("mafiasYGangsters");
-    const [allData, setAllData] = useState(null); // ✅ NUEVO: guardar todo el JSON
+    const [allMovies, setAllMovies] = useState([]);
 
-    // ✅ NUEVO: Cargar el JSON completo una sola vez
     useEffect(() => {
-        fetch(`${API_URL}/db.json`)
+        fetch(`${API_URL}/movies`)
             .then(res => res.json())
-            .then(data => setAllData(data))
+            .then(data => setAllMovies(data))
             .catch(err => console.error("Error cargando catálogo:", err));
     }, []);
 
-    // ✅ NUEVO: Filtrar por categoría cuando cambie
     useEffect(() => {
-        if (allData && allData[category]) {
-            setFilms(allData[category]);
-        }
-    }, [category, allData]);
+        setFilms(allMovies.filter(m => m.category === category));
+    }, [category, allMovies]);
 
     const handleReservar = (film) => {
         alert(`🎬 ¡RESERVADA! "${film.title}" para tu videoclub\n\nDirector: ${film.director}\nAño: ${film.year}\n\n✅ Te contactaremos para coordinar la entrega`);
-        
-        // ⚠️ En Vercel esto no funcionará (no puedes hacer POST a JSON estático)
-        console.log('Reserva guardada:', film);
     };
 
     return (
@@ -84,9 +76,9 @@ const Catalog = () => {
 
                 <div className="catalogGrid">
                     {films.map(film => (
-                        <div key={film.rank} className="catalogCard">
+                        <div key={film.id} className="catalogCard">
                             <img
-                                src={`/${film.img}`}
+                                src={film.img}
                                 alt={film.title}
                                 className="catalogImg"
                                 onError={(e) => {
@@ -108,7 +100,7 @@ const Catalog = () => {
                             </p>
 
                             <p className="catalogScore">
-                                ⭐ {film.filmaffinity_score}
+                                ⭐ {film.filmAffinity_score}
                             </p>
 
                             <div className="catalogActions">

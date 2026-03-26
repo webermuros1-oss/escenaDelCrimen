@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import FilmsCards from "../components/FilmsCards/FilmsCards";
 import "../styles/catalog.css";
 
 const categories = [
@@ -25,24 +24,10 @@ export default function CatalogPage() {
 
     const fetchFilms = async () => {
         setLoading(true);
-
         try {
-            if (selectedCategory === "all") {
-                const requests = categories
-                    .filter(cat => cat.value !== "all")
-                    .map(cat =>
-                        axios.get(`http://localhost:3000/${cat.value}`)
-                    );
-
-                const responses = await Promise.all(requests);
-                const allFilms = responses.flatMap(r => r.data);
-                setFilms(allFilms);
-            } else {
-                const res = await axios.get(
-                    `http://localhost:3000/${selectedCategory}`
-                );
-                setFilms(res.data);
-            }
+            const res = await axios.get('http://localhost:8080/movies');
+            const all = res.data;
+            setFilms(selectedCategory === "all" ? all : all.filter(f => f.category === selectedCategory));
         } catch (err) {
             console.error(err);
             setFilms([]);
@@ -72,7 +57,12 @@ export default function CatalogPage() {
             ) : (
                 <ul className="films-grid">
                     {films.map(film => (
-                        <FilmsCards key={film.id} film={film} />
+                        <li key={film.id} className="film-card">
+                            <img src={film.img} alt={film.title} onError={(e) => { e.target.src = 'https://via.placeholder.com/200x300?text=Sin+imagen'; }} />
+                            <h3>{film.title}</h3>
+                            <p>{film.director} · {film.year}</p>
+                            <p>⭐ {film.filmAffinity_score}</p>
+                        </li>
                     ))}
                 </ul>
             )}
